@@ -4,6 +4,7 @@
     >
 
     <application
+        android:name=".InitApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,13 +12,61 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         >
-        <activity android:name=".MainActivity">
+
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="orientation|uiMode|screenSize"
+            android:theme="@style/SplashTheme"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!--圆形-->
+        <activity-alias
+            android:name=".SplashActivity_circle"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher_round"
+            android:label="@string/app_name"
+            android:targetActivity=".SplashActivity"
+            >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+        </activity-alias>
+
+        <!--矩形-->
+        <activity-alias
+            android:name=".SplashActivity_rect"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:targetActivity=".SplashActivity"
+            >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
+        </activity-alias>
+
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|uiMode|screenSize"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+
+
+
+
+
     </application>
 
 </manifest>

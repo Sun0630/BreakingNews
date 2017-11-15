@@ -1,12 +1,13 @@
 package com.sx.breakingnews;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.sx.breakingnews.module.base.BaseActivity;
 
 /**
  * @author sunxin
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
