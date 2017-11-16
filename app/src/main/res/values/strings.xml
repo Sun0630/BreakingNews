@@ -4,4 +4,10 @@
     <string name="title_photo">图片</string>
     <string name="title_video">视频</string>
     <string name="title_media">头条号</string>
+    <string name="change_theme">切换主题</string>
+    <string name="nav_setting">设置</string>
+    <string name="nav_share">分享</string>
+    <string name="action_search">搜索</string>
+    <string name="navigation_drawer_open">打开侧栏</string>
+    <string name="navigation_drawer_close">关闭侧栏</string>
 </resources>
