@@ -1,4 +1,4 @@
-package com.sx.breakingnews.module.base.news;
+package com.sx.breakingnews.module.video;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,13 +14,13 @@ import android.widget.TextView;
  * @Description
  */
 
-public class NewsTabLayout extends Fragment {
+public class VideoTabLayout extends Fragment {
 
-    public static NewsTabLayout instance;
+    public static VideoTabLayout instance;
 
-    public static NewsTabLayout getInstance() {
+    public static VideoTabLayout getInstance() {
         if (instance == null) {
-            instance = new NewsTabLayout();
+            instance = new VideoTabLayout();
         }
         return instance;
     }
@@ -29,7 +29,7 @@ public class NewsTabLayout extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
-        textView.setText("News");
+        textView.setText("Video");
         return textView;
     }
 }

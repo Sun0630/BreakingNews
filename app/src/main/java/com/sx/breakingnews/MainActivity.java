@@ -13,10 +13,11 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.sx.breakingnews.module.base.BaseActivity;
-import com.sx.breakingnews.module.base.media.MediaTabLayout;
-import com.sx.breakingnews.module.base.news.NewsTabLayout;
-import com.sx.breakingnews.module.base.photo.PhotoTabLayout;
-import com.sx.breakingnews.module.base.video.VideoTabLayout;
+import com.sx.breakingnews.module.media.MediaTabLayout;
+import com.sx.breakingnews.module.news.NewsTabLayout;
+import com.sx.breakingnews.module.photo.PhotoTabLayout;
+import com.sx.breakingnews.module.video.VideoTabLayout;
+
 
 /**
  * @author sunxin
@@ -51,6 +52,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         toolbar = findViewById(R.id.toolbar);
         bottomNavigationView = findViewById(R.id.navitation_bottom);
         toolbar.inflateMenu(R.menu.menu_activity_main);
+        toolbar.setTitle(R.string.title_news);
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
@@ -113,7 +115,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 toolbar.setTitle(R.string.title_photo);
                 if (photoTabLayout == null) {
                     photoTabLayout = PhotoTabLayout.getInstance();
-                    ft.add(R.id.container,photoTabLayout,PhotoTabLayout.class.getSimpleName());
+                    ft.add(R.id.container,photoTabLayout, PhotoTabLayout.class.getSimpleName());
                 }else {
                     ft.show(photoTabLayout);
                 }

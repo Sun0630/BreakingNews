@@ -1,4 +1,4 @@
-package com.sx.breakingnews.module.base.media;
+package com.sx.breakingnews.module.photo;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,13 +14,13 @@ import android.widget.TextView;
  * @Description
  */
 
-public class MediaTabLayout extends Fragment {
+public class PhotoTabLayout extends Fragment {
 
-    public static MediaTabLayout instance;
+    public static PhotoTabLayout instance;
 
-    public static MediaTabLayout getInstance() {
+    public static PhotoTabLayout getInstance() {
         if (instance == null) {
-            instance = new MediaTabLayout();
+            instance = new PhotoTabLayout();
         }
         return instance;
     }
@@ -29,7 +29,7 @@ public class MediaTabLayout extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         TextView textView = new TextView(getActivity());
-        textView.setText("Media");
+        textView.setText("Photo");
         return textView;
     }
 }
