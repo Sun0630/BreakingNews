@@ -1,10 +1,9 @@
-package com.sx.breakingnews.module.news;
+package com.sx.breakingnews.module.news.article;
 
 import android.os.Bundle;
 import android.view.View;
 
 import com.sx.breakingnews.module.base.BaseListFragment;
-import com.sx.breakingnews.module.news.article.INewsArtivle;
 
 /**
  * @Author sunxin
@@ -15,6 +14,7 @@ import com.sx.breakingnews.module.news.article.INewsArtivle;
 public class NewsArticleView extends BaseListFragment<INewsArtivle.Presenter> implements INewsArtivle.View{
 
     public static final String TAG = "NewsArticleView";
+    private String mCategoryId;
 
     public static NewsArticleView newInstance(String categoryId) {
         Bundle bundle = new Bundle();
@@ -26,15 +26,27 @@ public class NewsArticleView extends BaseListFragment<INewsArtivle.Presenter> im
     }
 
     @Override
-    protected void fetchData() {
-        super.fetchData();
-        onLoadData();
+    protected void initView(View view) {
 
     }
 
     @Override
-    public void onLoadData() {
+    protected void initData() {
+        mCategoryId = getArguments().getString(TAG);
+    }
 
+
+    @Override
+    protected void fetchData() {
+        super.fetchData();
+        onLoadData();
+    }
+
+    @Override
+    public void onLoadData() {
+        onShowLoading();
+        //加载数据
+        presenter.onLoadData(mCategoryId);
     }
 
     @Override
@@ -42,19 +54,12 @@ public class NewsArticleView extends BaseListFragment<INewsArtivle.Presenter> im
 
     }
 
-    @Override
-    protected void initData() {
 
-    }
-
-    @Override
-    protected void initView(View view) {
-
-    }
 
     @Override
     public void setPresenter(INewsArtivle.Presenter presenter) {
-        super.setPresenter(presenter);
-
+        if (presenter == null) {
+            presenter = new NewsArticlePresenter(this);
+        }
     }
 }

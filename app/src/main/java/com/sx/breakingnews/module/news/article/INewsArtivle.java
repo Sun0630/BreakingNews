@@ -1,7 +1,10 @@
 package com.sx.breakingnews.module.news.article;
 
+import com.sx.breakingnews.bean.news.MultiNewsArticleDataBean;
 import com.sx.breakingnews.module.base.IBaseListView;
 import com.sx.breakingnews.module.base.IBasePresenter;
+
+import java.util.List;
 
 /**
  * @Author Administrator
@@ -39,8 +42,9 @@ public interface INewsArtivle {
 
         /**
          * 设置适配器
+         * @param dataBeans
          */
-        void doSetAdapter();
+        void doSetAdapter(List<MultiNewsArticleDataBean> dataBeans);
 
         /**
          * 加载完毕

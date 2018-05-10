@@ -16,6 +16,7 @@ import com.sx.breakingnews.Constant;
 import com.sx.breakingnews.R;
 import com.sx.breakingnews.bean.news.NewsChannelBean;
 import com.sx.breakingnews.database.dao.NewsChannelDao;
+import com.sx.breakingnews.module.news.article.NewsArticleView;
 import com.sx.breakingnews.module.news.channel.NewsChannelActivity;
 
 import java.util.ArrayList;

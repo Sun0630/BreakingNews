@@ -67,29 +67,26 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
 
         //设置navigationview
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    //新闻
-                    case R.id.action_news:
-                        showFragment(FRAGMENT_NEWS);
-                        break;
-                    //图片
-                    case R.id.action_photo:
-                        showFragment(FRAGMENT_PHOTO);
-                        break;
-                    //视频
-                    case R.id.action_video:
-                        showFragment(FRAGMENT_VIDEO);
-                        break;
-                    //头条号
-                    case R.id.action_media:
-                        showFragment(FRAGMENT_MEDIA);
-                        break;
-                }
-                return true;
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                //新闻
+                case R.id.action_news:
+                    showFragment(FRAGMENT_NEWS);
+                    break;
+                //图片
+                case R.id.action_photo:
+                    showFragment(FRAGMENT_PHOTO);
+                    break;
+                //视频
+                case R.id.action_video:
+                    showFragment(FRAGMENT_VIDEO);
+                    break;
+                //头条号
+                case R.id.action_media:
+                    showFragment(FRAGMENT_MEDIA);
+                    break;
             }
+            return true;
         });
 
     }
