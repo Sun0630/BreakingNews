@@ -3,6 +3,7 @@
           package="com.sx.breakingnews"
     >
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <application
         android:name=".InitApp"
         android:allowBackup="true"
@@ -16,6 +17,7 @@
             android:name=".SplashActivity"
             android:configChanges="orientation|uiMode|screenSize"
             android:theme="@style/SplashTheme"
+
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

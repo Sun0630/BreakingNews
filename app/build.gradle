@@ -35,4 +35,23 @@ dependencies {
     // RxLifecycle
     implementation 'com.trello.rxlifecycle2:rxlifecycle:2.0.1'
     implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.0.1'
+
+    //retrofit2
+    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+
+    // RxJava 2
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.12'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+    // okhttp 3
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    debugImplementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+
+    // 持久化 Cookie
+    implementation 'com.github.franmontiel:PersistentCookieJar:v1.0.1'
+
+    //多布局显示
+    implementation 'me.drakeet.multitype:multitype:3.4.4'
 }

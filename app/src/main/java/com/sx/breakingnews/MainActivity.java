@@ -46,6 +46,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         initView();
         //第一次进入显示新闻
         showFragment(FRAGMENT_NEWS);
+
     }
 
     private void initView() {

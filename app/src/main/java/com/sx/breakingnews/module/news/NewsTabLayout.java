@@ -92,12 +92,23 @@ public class NewsTabLayout extends Fragment {
                     if (mMap.containsKey(channelId)){
                         mFragmentList.add(mMap.get(channelId));
                     }else {
+                        //todo 问答页面
 
                     }
                     break;
                 default:
+                    if (mMap.containsKey(channelId)){
+                        mFragmentList.add(mMap.get(channelId));
+                    }else {
+                        // 新闻页面
+                        fragment = NewsArticleView.newInstance(channelId);
+                        mFragmentList.add(fragment);
+                    }
 
+                    break;
             }
+
+            mTitleList.add(bean.getChannelName());
 
         }
 
