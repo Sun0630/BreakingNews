@@ -14,10 +14,12 @@ import android.widget.LinearLayout;
 
 import com.sx.breakingnews.Constant;
 import com.sx.breakingnews.R;
+import com.sx.breakingnews.adapter.BasePagerAdapter;
 import com.sx.breakingnews.bean.news.NewsChannelBean;
 import com.sx.breakingnews.database.dao.NewsChannelDao;
 import com.sx.breakingnews.module.news.article.NewsArticleView;
 import com.sx.breakingnews.module.news.channel.NewsChannelActivity;
+import com.sx.breakingnews.module.wenda.WendaArticleView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +40,9 @@ public class NewsTabLayout extends Fragment {
     private NewsChannelDao mDao = new NewsChannelDao();
     private List<Fragment> mFragmentList;
     private List<String> mTitleList;
-    private Map<String,Fragment> mMap = new HashMap<>();
+    private Map<String, Fragment> mMap = new HashMap<>();
+    private TabLayout mTabLayout;
+    private BasePagerAdapter mAdapter;
 
     public static NewsTabLayout getInstance() {
         if (instance == null) {
@@ -58,19 +62,24 @@ public class NewsTabLayout extends Fragment {
 
 
     private void initView(View view) {
-        TabLayout tabLayout = view.findViewById(R.id.tab_layout_news);
+        mTabLayout = view.findViewById(R.id.tab_layout_news);
         mViewPager = view.findViewById(R.id.view_pager_news);
         ImageView add_channel_iv = view.findViewById(R.id.add_channel_iv);
         mLinearLayout = view.findViewById(R.id.header_layout);
 
-        tabLayout.setupWithViewPager(mViewPager);
-        tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
+        mTabLayout.setTabTextColors(R.color.cardview_shadow_end_color,R.color.colorAccent);
+        mTabLayout.setSelectedTabIndicatorColor(getResources().getColor(R.color.colorAccent));
+        mTabLayout.setupWithViewPager(mViewPager);
+        mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
         add_channel_iv.setOnClickListener(v -> startActivity(new Intent(getActivity(), NewsChannelActivity.class)));
     }
 
     private void initData() {
         initTabs();
+        mAdapter = new BasePagerAdapter(getChildFragmentManager(), mFragmentList, mTitleList);
+        mViewPager.setAdapter(mAdapter);
+        mViewPager.setOffscreenPageLimit(15);
     }
 
     private void initTabs() {
@@ -90,17 +99,17 @@ public class NewsTabLayout extends Fragment {
 
             switch (channelId) {
                 case "question_and_answer":
-                    if (mMap.containsKey(channelId)){
+                    if (mMap.containsKey(channelId)) {
                         mFragmentList.add(mMap.get(channelId));
-                    }else {
+                    } else {
                         //todo 问答页面
-
+                        mFragmentList.add(new WendaArticleView());
                     }
                     break;
                 default:
-                    if (mMap.containsKey(channelId)){
+                    if (mMap.containsKey(channelId)) {
                         mFragmentList.add(mMap.get(channelId));
-                    }else {
+                    } else {
                         // 新闻页面
                         fragment = NewsArticleView.newInstance(channelId);
                         mFragmentList.add(fragment);
@@ -110,7 +119,9 @@ public class NewsTabLayout extends Fragment {
             }
 
             mTitleList.add(bean.getChannelName());
-
+            if (fragment != null) {
+                mMap.put(channelId, fragment);
+            }
         }
 
     }

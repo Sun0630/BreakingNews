@@ -1,6 +1,7 @@
 package com.sx.breakingnews.module.news.article;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
@@ -16,10 +17,7 @@ import java.util.List;
 import java.util.Random;
 
 import io.reactivex.Observable;
-import io.reactivex.ObservableSource;
 import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.functions.Function;
-import io.reactivex.functions.Predicate;
 import io.reactivex.schedulers.Schedulers;
 
 /**
@@ -28,11 +26,11 @@ import io.reactivex.schedulers.Schedulers;
  * @Description 新闻文章的presenter ，需要持有一个View对象，通过构造函数传入
  */
 
-public class NewsArticlePresenter implements INewsArtivle.Presenter {
+public class NewsArticlePresenter implements INewsArticle.Presenter {
 
     public static final String TAG = "NewsArticlePresenter";
 
-    private INewsArtivle.View mView;
+    private INewsArticle.View mView;
     private String category;
     private String time;
 
@@ -40,20 +38,18 @@ public class NewsArticlePresenter implements INewsArtivle.Presenter {
     private Gson mGson = new Gson();
     private Random mRandom = new Random();
 
-    public NewsArticlePresenter(INewsArtivle.View view) {
+    public NewsArticlePresenter(INewsArticle.View view) {
         mView = view;
         this.time = TimeUtil.getCurrentTimeStamp();
     }
 
-    @Override
-    public void doRefresh() {
 
-    }
 
     @Override
     public void doShowNetError() {
         mView.onShowNoMore();
         mView.onShowNetWorkError();
+        mView.onHideLoading();
     }
 
     @Override
@@ -67,71 +63,72 @@ public class NewsArticlePresenter implements INewsArtivle.Presenter {
             ErrorAction.print(e);
         }
 
+        //释放内存
+        if (datalist.size()>150){
+            datalist.clear();
+        }
+
+        Logger.e("Category:" + this.category);
+
         //开始请求网络
 
         getRandom()
                 .subscribeOn(Schedulers.io())
-                //转换操作，转换出来的每一个新数据都会取代掉前一个数据
-                .switchMap(new Function<MultiNewsArticleBean, ObservableSource<MultiNewsArticleDataBean>>() {
-                    @Override
-                    public ObservableSource<MultiNewsArticleDataBean> apply(MultiNewsArticleBean bean) throws Exception {
-                        for (MultiNewsArticleBean.DataBean dataBean : bean.getData()) {
-                            datalist.add(mGson.fromJson(dataBean.getContent(), MultiNewsArticleDataBean.class));
-                        }
-                        //这个操作符可遍历可迭代的数据
-                        return Observable.fromIterable(datalist);
+                .switchMap(multiNewsArticleBean -> {
+                    List<MultiNewsArticleDataBean> dataList = new ArrayList<>();
+                    for (MultiNewsArticleBean.DataBean dataBean : multiNewsArticleBean.getData()) {
+                        dataList.add(mGson.fromJson(dataBean.getContent(), MultiNewsArticleDataBean.class));
                     }
+                    return Observable.fromIterable(dataList);
                 })
-                .filter(new Predicate<MultiNewsArticleDataBean>() {
-                    @Override
-                    public boolean test(MultiNewsArticleDataBean dataBean) throws Exception {
-                        time = String.valueOf(dataBean.getBehot_time());
-                        if (TextUtils.isEmpty(dataBean.getSource())) {
+                .filter(dataBean -> {
+                    time = String.valueOf(dataBean.getBehot_time());
+                    if (TextUtils.isEmpty(dataBean.getSource())) {
+                        return false;
+                    }
+                    try {
+                        // 过滤头条问答新闻
+                        if (dataBean.getSource().contains("头条问答")
+                                || dataBean.getTag().contains("ad")
+                                || dataBean.getSource().contains("悟空问答")) {
                             return false;
                         }
-                        try {
-                            // 过滤头条问答新闻
-                            if (dataBean.getSource().contains("头条问答")
-                                    || dataBean.getTag().contains("ad")
-                                    || dataBean.getSource().contains("悟空问答")) {
-                                return false;
-                            }
-                            // 过滤头条问答新闻
-                            if (dataBean.getRead_count() == 0 || TextUtils.isEmpty(dataBean.getMedia_name())) {
-                                String title = dataBean.getTitle();
-                                if (title.lastIndexOf("？") == title.length() - 1) {
-                                    return false;
-                                }
-                            }
-                        } catch (NullPointerException e) {
-                            ErrorAction.print(e);
-                        }
-                        // 过滤重复新闻(与上次刷新的数据比较)
-                        for (MultiNewsArticleDataBean bean : datalist) {
-                            if (bean.getTitle().equals(dataBean.getTitle())) {
+                        // 过滤头条问答新闻
+                        if (dataBean.getRead_count() == 0 || TextUtils.isEmpty(dataBean.getMedia_name())) {
+                            String title = dataBean.getTitle();
+                            if (title.lastIndexOf("？") == title.length() - 1) {
                                 return false;
                             }
                         }
-                        return true;
+                    } catch (NullPointerException e) {
+                        ErrorAction.print(e);
                     }
+                    // 过滤重复新闻(与上次刷新的数据比较)
+                    for (MultiNewsArticleDataBean bean : datalist) {
+                        if (bean.getTitle().equals(dataBean.getTitle())) {
+                            return false;
+                        }
+                    }
+                    return true;
                 })
                 .toList()
-                .map(beans -> {
-                    //过滤重复新闻，与本次刷新的数据比较，因为使用了2个网络请求，数据会有重复
-                    for (int i = 0; i < beans.size() - 1; i++) {
-                        for (int j = beans.size() - 1; j > i; j--) {
-                            if (beans.get(j).getTitle().equals(beans.get(i).getTitle())) {
-                                beans.remove(j);
+                .map(list -> {
+                    // 过滤重复新闻(与本次刷新的数据比较,因为使用了2个请求,数据会有重复)
+                    for (int i = 0; i < list.size() - 1; i++) {
+                        for (int j = list.size() - 1; j > i; j--) {
+                            if (list.get(j).getTitle().equals(list.get(i).getTitle())) {
+                                list.remove(j);
                             }
                         }
                     }
-                    return beans;
+                    return list;
                 })
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(beans -> {
-                    if (null != beans && beans.size() > 0) {
-                        Logger.e(beans.toString());
-                        doSetAdapter(beans);
+//                .as(view.bindAutoDispose())
+                .subscribe(list -> {
+                    Log.e(TAG, "subscribe " + list.size());
+                    if (null != list && list.size() > 0) {
+                        doSetAdapter(list);
                     } else {
                         doShowNoMore();
                     }
@@ -140,6 +137,17 @@ public class NewsArticlePresenter implements INewsArtivle.Presenter {
                     ErrorAction.print(throwable);
                 });
 
+    }
+
+
+    @Override
+    public void doRefresh() {
+        if (datalist.size() != 0){
+            datalist.clear();
+            time = TimeUtil.getCurrentTimeStamp();
+        }
+        mView.onShowLoading();
+        onLoadData();
     }
 
     @Override

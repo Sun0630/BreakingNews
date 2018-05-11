@@ -6,6 +6,7 @@ import com.franmontiel.persistentcookiejar.cache.SetCookieCache;
 import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersistor;
 import com.sx.breakingnews.BuildConfig;
 import com.sx.breakingnews.InitApp;
+import com.sx.breakingnews.api.INewsApi;
 import com.sx.breakingnews.debug.SdkManager;
 import com.sx.breakingnews.utils.NetWorkUtil;
 
@@ -83,14 +84,13 @@ public class RetrofitFactory {
                             .retryOnConnectionFailure(true);
 
 
-
                     //Log拦截器
-                    if (BuildConfig.DEBUG){
+                    if (BuildConfig.DEBUG) {
                         builder = SdkManager.initInterceptor(builder);
                     }
 
                     sRetrofit = new Retrofit.Builder()
-                            .baseUrl("")
+                            .baseUrl(INewsApi.HOST)
                             .client(builder.build())
                             .addConverterFactory(GsonConverterFactory.create())
                             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

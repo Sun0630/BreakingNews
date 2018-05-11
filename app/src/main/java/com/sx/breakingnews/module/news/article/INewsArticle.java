@@ -12,7 +12,7 @@ import java.util.List;
  * @Description
  */
 
-public interface INewsArtivle {
+public interface INewsArticle {
 
     interface View extends IBaseListView<Presenter>{
 

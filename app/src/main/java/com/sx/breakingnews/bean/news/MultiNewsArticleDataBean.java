@@ -15,72 +15,72 @@ import java.util.List;
 
 public class MultiNewsArticleDataBean implements Parcelable{
 
+
     /**
-     * abstract :
+     * abstract : How-to Setting up a Humidor
      * action_list : [{"action":1,"desc":"","extra":{}},{"action":3,"desc":"","extra":{}},{"action":7,"desc":"","extra":{}},{"action":9,"desc":"","extra":{}}]
      * aggr_type : 1
      * allow_download : false
-     * article_alt_url : http://m.toutiao.com/group/article/6553127623394853384/
-     * article_sub_type : 1
-     * article_type : 1
-     * article_url : https://temai.snssdk.com/article/feed/index?id=7088292&subscribe=5501832587&source_type=24&content_type=2&create_user_id=2001&classify=16&adid=__AID__
+     * article_sub_type : 0
+     * article_type : 0
+     * article_url : http://toutiao.com/group/6553095961164382733/
      * ban_comment : 0
-     * behot_time : 1525934108
+     * behot_time : 1525934168
      * bury_count : 0
      * cell_flag : 262155
      * cell_layout_style : 1
      * cell_type : 0
      * comment_count : 0
      * content_decoration :
-     * cursor : 1525934108000
-     * digg_count : 0
-     * display_url : http://toutiao.com/group/6553127623394853384/
-     * filter_words : [{"id":"8:0","is_selected":false,"name":"看过了"},{"id":"9:1","is_selected":false,"name":"内容太水"},{"id":"5:2162942372","is_selected":false,"name":"拉黑作者:潮男指南"},{"id":"2:558298604","is_selected":false,"name":"不想看:今日特卖"},{"id":"6:227718","is_selected":false,"name":"不想看:亚麻"},{"id":"7:10001","is_selected":false,"name":"不想看:全部特卖"}]
+     * cursor : 1525934168000
+     * digg_count : 2
+     * display_url : http://toutiao.com/group/6553095961164382733/
+     * filter_words : [{"id":"8:0","is_selected":false,"name":"看过了"},{"id":"9:1","is_selected":false,"name":"内容太水"},{"id":"5:315929736","is_selected":false,"name":"拉黑作者:雪茄123"},{"id":"1:196855694","is_selected":false,"name":"不想看:时尚视频"},{"id":"6:67026","is_selected":false,"name":"不想看:雪茄"}]
      * forward_info : {"forward_count":0}
-     * gallary_image_count : 16
-     * gallary_style : 1
-     * group_flags : 131072
-     * group_id : 6553127623394853384
-     * has_image : true
+     * group_flags : 32832
+     * group_id : 6553095961164382733
      * has_m3u8_video : false
      * has_mp4_video : 0
-     * has_video : false
+     * has_video : true
      * hot : 0
-     * ignore_web_transform : 0
-     * image_list : [{"height":450,"uri":"list/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e","url":"http://p1.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp","url_list":[{"url":"http://p1.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"},{"url":"http://pb3.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"},{"url":"http://pb9.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"}],"width":800},{"height":450,"uri":"list/temai/b2fdf51569f556d47250865f4cd34c0e5519e845","url":"http://p1.pstatp.com/list/300x196/temai/b2fdf51569f556d47250865f4cd34c0e5519e845.webp","url_list":[{"url":"http://p1.pstatp.com/list/300x196/temai/b2fdf51569f556d47250865f4cd34c0e5519e845.webp"},{"url":"http://pb3.pstatp.com/list/300x196/temai/b2fdf51569f556d47250865f4cd34c0e5519e845.webp"},{"url":"http://pb9.pstatp.com/list/300x196/temai/b2fdf51569f556d47250865f4cd34c0e5519e845.webp"}],"width":800},{"height":843,"uri":"list/temai/8720202366ad1b7c61e1afdd5a1de3aeb0447f4c","url":"http://p1.pstatp.com/list/300x196/temai/8720202366ad1b7c61e1afdd5a1de3aeb0447f4c.webp","url_list":[{"url":"http://p1.pstatp.com/list/300x196/temai/8720202366ad1b7c61e1afdd5a1de3aeb0447f4c.webp"},{"url":"http://pb3.pstatp.com/list/300x196/temai/8720202366ad1b7c61e1afdd5a1de3aeb0447f4c.webp"},{"url":"http://pb9.pstatp.com/list/300x196/temai/8720202366ad1b7c61e1afdd5a1de3aeb0447f4c.webp"}],"width":1500}]
+     * ignore_web_transform : 1
      * is_subject : false
-     * item_id : 6553127623394853384
+     * item_id : 6553095961164382733
      * item_version : 0
-     * keywords : 运动裤,中国风男装亚麻,休闲裤,衬衫,舒适
+     * keywords : 保湿
+     * large_image_list : [{"height":326,"uri":"video1609/pgc-image/1525761536025dfbac711d1","url":"http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1","url_list":[{"url":"http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"},{"url":"http://pb1.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"},{"url":"http://pb3.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"}],"width":580}]
      * level : 0
      * log_pb : {"impr_id":"20180510143608010020038093137B74"}
-     * media_info : {"avatar_url":"http://p2.pstatp.com/large/8602/5710290530","follow":false,"is_star_user":false,"media_id":5501832587,"name":"潮男指南","recommend_reason":"","recommend_type":0,"user_id":5501832587,"user_verified":false,"verified_content":""}
-     * media_name : 潮男指南
-     * middle_image : {"height":450,"uri":"list/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e","url":"http://p1.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp","url_list":[{"url":"http://p1.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"},{"url":"http://pb3.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"},{"url":"http://pb9.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"}],"width":800}
+     * media_info : {"avatar_url":"http://p2.pstatp.com/large/9705/940341672","follow":false,"is_star_user":false,"media_id":5772179103,"name":"雪茄123","recommend_reason":"","recommend_type":0,"user_id":5772179103,"user_verified":false,"verified_content":""}
+     * media_name : 雪茄123
+     * middle_image : {"height":356,"uri":"list/pgc-image/1525761536025dfbac711d1","url":"http://p9.pstatp.com/list/300x196/pgc-image/1525761536025dfbac711d1.webp","url_list":[{"url":"http://p9.pstatp.com/list/300x196/pgc-image/1525761536025dfbac711d1.webp"},{"url":"http://pb1.pstatp.com/list/300x196/pgc-image/1525761536025dfbac711d1.webp"},{"url":"http://pb3.pstatp.com/list/300x196/pgc-image/1525761536025dfbac711d1.webp"}],"width":640}
      * need_client_impr_recycle : 1
-     * publish_time : 1525768922
-     * read_count : 9
+     * publish_time : 1525761550
+     * read_count : 22
      * rid : 20180510143608010020038093137B74
      * share_count : 0
-     * share_info : {"cover_image":null,"description":null,"share_type":{"pyq":2,"qq":0,"qzone":0,"wx":0},"share_url":"http://m.toutiao.com/group/6553127623394853384/?iid=5034850950&app=news_article","title":"偷偷跟您讲，比运动裤还舒适的亚麻裤\u201c顺势而出\u201d，70男贼中意"}
+     * share_info : {"cover_image":null,"description":null,"share_type":{"pyq":2,"qq":0,"qzone":0,"wx":0},"share_url":"http://m.toutiao.com/a6553095961164382733/?iid=5034850950&app=news_article","title":"如何开启一个新的雪茄保湿盒？"}
      * share_type : 2
-     * share_url : http://m.toutiao.com/group/6553127623394853384/?iid=5034850950&app=news_article
+     * share_url : http://m.toutiao.com/a6553095961164382733/?iid=5034850950&app=news_article
      * show_dislike : true
      * show_portrait : false
      * show_portrait_article : false
-     * source : 潮男指南
-     * source_icon_style : 6
-     * source_open_url : sslocal://profile?uid=5501832587
-     * tag : news_fashion
-     * tag_id : 6553127623394853384
+     * source : 雪茄123
+     * source_icon_style : 2
+     * source_open_url : sslocal://profile?refer=video&uid=5772179103
+     * tag : video_fashion
+     * tag_id : 6553095961164382733
      * tip : 0
-     * title : 偷偷跟您讲，比运动裤还舒适的亚麻裤“顺势而出”，70男贼中意
+     * title : 如何开启一个新的雪茄保湿盒？
      * ugc_recommend : {"activity":"","reason":""}
-     * url : https://temai.snssdk.com/article/feed/index?id=7088292&subscribe=5501832587&source_type=24&content_type=2&create_user_id=2001&classify=16&adid=__AID__
-     * user_info : {"avatar_url":"http://p3.pstatp.com/thumb/8602/5710290530","description":"每日优质商品推荐，每日新鲜资讯分享。","follow":false,"follower_count":0,"name":"潮男指南","user_id":5501832587,"user_verified":false}
+     * url : http://toutiao.com/group/6553095961164382733/
+     * user_info : {"avatar_url":"http://p3.pstatp.com/thumb/9705/940341672","description":"雪茄123媒体资讯专业网站创建于2012年6月，提供雪茄文化，知识信息资讯。","follow":false,"follower_count":0,"name":"雪茄123","user_id":5772179103,"user_verified":false}
      * user_repin : 0
      * user_verified : 0
      * verified_content :
+     * video_detail_info : {"detail_video_large_image":{"height":326,"uri":"video1609/pgc-image/1525761536025dfbac711d1","url":"http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1","url_list":[{"url":"http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"},{"url":"http://pb1.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"},{"url":"http://pb3.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"}],"width":580},"direct_play":1,"group_flags":32832,"show_pgc_subscribe":1,"video_id":"v02004660000bbokblpcgf31ghjh4jlg","video_preloading_flag":1,"video_type":0,"video_watch_count":46,"video_watching_count":0}
+     * video_duration : 313
+     * video_id : v02004660000bbokblpcgf31ghjh4jlg
      * video_style : 0
      */
 
@@ -88,7 +88,6 @@ public class MultiNewsArticleDataBean implements Parcelable{
     private String abstractX;
     private int aggr_type;
     private boolean allow_download;
-    private String article_alt_url;
     private int article_sub_type;
     private int article_type;
     private String article_url;
@@ -104,11 +103,8 @@ public class MultiNewsArticleDataBean implements Parcelable{
     private int digg_count;
     private String display_url;
     private ForwardInfoBean forward_info;
-    private int gallary_image_count;
-    private int gallary_style;
     private int group_flags;
     private long group_id;
-    private boolean has_image;
     private boolean has_m3u8_video;
     private int has_mp4_video;
     private boolean has_video;
@@ -147,16 +143,18 @@ public class MultiNewsArticleDataBean implements Parcelable{
     private int user_repin;
     private int user_verified;
     private String verified_content;
+    private VideoDetailInfoBean video_detail_info;
+    private int video_duration;
+    private String video_id;
     private int video_style;
     private List<ActionListBean> action_list;
     private List<FilterWordsBean> filter_words;
-    private List<ImageListBean> image_list;
+    private List<LargeImageListBean> large_image_list;
 
     protected MultiNewsArticleDataBean(Parcel in) {
         abstractX = in.readString();
         aggr_type = in.readInt();
         allow_download = in.readByte() != 0;
-        article_alt_url = in.readString();
         article_sub_type = in.readInt();
         article_type = in.readInt();
         article_url = in.readString();
@@ -171,11 +169,8 @@ public class MultiNewsArticleDataBean implements Parcelable{
         cursor = in.readLong();
         digg_count = in.readInt();
         display_url = in.readString();
-        gallary_image_count = in.readInt();
-        gallary_style = in.readInt();
         group_flags = in.readInt();
         group_id = in.readLong();
-        has_image = in.readByte() != 0;
         has_m3u8_video = in.readByte() != 0;
         has_mp4_video = in.readInt();
         has_video = in.readByte() != 0;
@@ -208,6 +203,8 @@ public class MultiNewsArticleDataBean implements Parcelable{
         user_repin = in.readInt();
         user_verified = in.readInt();
         verified_content = in.readString();
+        video_duration = in.readInt();
+        video_id = in.readString();
         video_style = in.readInt();
     }
 
@@ -245,14 +242,6 @@ public class MultiNewsArticleDataBean implements Parcelable{
 
     public void setAllow_download(boolean allow_download) {
         this.allow_download = allow_download;
-    }
-
-    public String getArticle_alt_url() {
-        return article_alt_url;
-    }
-
-    public void setArticle_alt_url(String article_alt_url) {
-        this.article_alt_url = article_alt_url;
     }
 
     public int getArticle_sub_type() {
@@ -375,22 +364,6 @@ public class MultiNewsArticleDataBean implements Parcelable{
         this.forward_info = forward_info;
     }
 
-    public int getGallary_image_count() {
-        return gallary_image_count;
-    }
-
-    public void setGallary_image_count(int gallary_image_count) {
-        this.gallary_image_count = gallary_image_count;
-    }
-
-    public int getGallary_style() {
-        return gallary_style;
-    }
-
-    public void setGallary_style(int gallary_style) {
-        this.gallary_style = gallary_style;
-    }
-
     public int getGroup_flags() {
         return group_flags;
     }
@@ -405,14 +378,6 @@ public class MultiNewsArticleDataBean implements Parcelable{
 
     public void setGroup_id(long group_id) {
         this.group_id = group_id;
-    }
-
-    public boolean isHas_image() {
-        return has_image;
-    }
-
-    public void setHas_image(boolean has_image) {
-        this.has_image = has_image;
     }
 
     public boolean isHas_m3u8_video() {
@@ -719,6 +684,30 @@ public class MultiNewsArticleDataBean implements Parcelable{
         this.verified_content = verified_content;
     }
 
+    public VideoDetailInfoBean getVideo_detail_info() {
+        return video_detail_info;
+    }
+
+    public void setVideo_detail_info(VideoDetailInfoBean video_detail_info) {
+        this.video_detail_info = video_detail_info;
+    }
+
+    public int getVideo_duration() {
+        return video_duration;
+    }
+
+    public void setVideo_duration(int video_duration) {
+        this.video_duration = video_duration;
+    }
+
+    public String getVideo_id() {
+        return video_id;
+    }
+
+    public void setVideo_id(String video_id) {
+        this.video_id = video_id;
+    }
+
     public int getVideo_style() {
         return video_style;
     }
@@ -743,12 +732,12 @@ public class MultiNewsArticleDataBean implements Parcelable{
         this.filter_words = filter_words;
     }
 
-    public List<ImageListBean> getImage_list() {
-        return image_list;
+    public List<LargeImageListBean> getLarge_image_list() {
+        return large_image_list;
     }
 
-    public void setImage_list(List<ImageListBean> image_list) {
-        this.image_list = image_list;
+    public void setLarge_image_list(List<LargeImageListBean> large_image_list) {
+        this.large_image_list = large_image_list;
     }
 
     @Override
@@ -757,65 +746,62 @@ public class MultiNewsArticleDataBean implements Parcelable{
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(abstractX);
-        dest.writeInt(aggr_type);
-        dest.writeByte((byte) (allow_download ? 1 : 0));
-        dest.writeString(article_alt_url);
-        dest.writeInt(article_sub_type);
-        dest.writeInt(article_type);
-        dest.writeString(article_url);
-        dest.writeInt(ban_comment);
-        dest.writeInt(behot_time);
-        dest.writeInt(bury_count);
-        dest.writeInt(cell_flag);
-        dest.writeInt(cell_layout_style);
-        dest.writeInt(cell_type);
-        dest.writeInt(comment_count);
-        dest.writeString(content_decoration);
-        dest.writeLong(cursor);
-        dest.writeInt(digg_count);
-        dest.writeString(display_url);
-        dest.writeInt(gallary_image_count);
-        dest.writeInt(gallary_style);
-        dest.writeInt(group_flags);
-        dest.writeLong(group_id);
-        dest.writeByte((byte) (has_image ? 1 : 0));
-        dest.writeByte((byte) (has_m3u8_video ? 1 : 0));
-        dest.writeInt(has_mp4_video);
-        dest.writeByte((byte) (has_video ? 1 : 0));
-        dest.writeInt(hot);
-        dest.writeInt(ignore_web_transform);
-        dest.writeByte((byte) (is_subject ? 1 : 0));
-        dest.writeLong(item_id);
-        dest.writeInt(item_version);
-        dest.writeString(keywords);
-        dest.writeInt(level);
-        dest.writeString(media_name);
-        dest.writeInt(need_client_impr_recycle);
-        dest.writeInt(publish_time);
-        dest.writeInt(read_count);
-        dest.writeString(rid);
-        dest.writeInt(share_count);
-        dest.writeInt(share_type);
-        dest.writeString(share_url);
-        dest.writeByte((byte) (show_dislike ? 1 : 0));
-        dest.writeByte((byte) (show_portrait ? 1 : 0));
-        dest.writeByte((byte) (show_portrait_article ? 1 : 0));
-        dest.writeString(source);
-        dest.writeInt(source_icon_style);
-        dest.writeString(source_open_url);
-        dest.writeString(tag);
-        dest.writeLong(tag_id);
-        dest.writeInt(tip);
-        dest.writeString(title);
-        dest.writeString(url);
-        dest.writeInt(user_repin);
-        dest.writeInt(user_verified);
-        dest.writeString(verified_content);
-        dest.writeInt(video_style);
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(abstractX);
+        parcel.writeInt(aggr_type);
+        parcel.writeByte((byte) (allow_download ? 1 : 0));
+        parcel.writeInt(article_sub_type);
+        parcel.writeInt(article_type);
+        parcel.writeString(article_url);
+        parcel.writeInt(ban_comment);
+        parcel.writeInt(behot_time);
+        parcel.writeInt(bury_count);
+        parcel.writeInt(cell_flag);
+        parcel.writeInt(cell_layout_style);
+        parcel.writeInt(cell_type);
+        parcel.writeInt(comment_count);
+        parcel.writeString(content_decoration);
+        parcel.writeLong(cursor);
+        parcel.writeInt(digg_count);
+        parcel.writeString(display_url);
+        parcel.writeInt(group_flags);
+        parcel.writeLong(group_id);
+        parcel.writeByte((byte) (has_m3u8_video ? 1 : 0));
+        parcel.writeInt(has_mp4_video);
+        parcel.writeByte((byte) (has_video ? 1 : 0));
+        parcel.writeInt(hot);
+        parcel.writeInt(ignore_web_transform);
+        parcel.writeByte((byte) (is_subject ? 1 : 0));
+        parcel.writeLong(item_id);
+        parcel.writeInt(item_version);
+        parcel.writeString(keywords);
+        parcel.writeInt(level);
+        parcel.writeString(media_name);
+        parcel.writeInt(need_client_impr_recycle);
+        parcel.writeInt(publish_time);
+        parcel.writeInt(read_count);
+        parcel.writeString(rid);
+        parcel.writeInt(share_count);
+        parcel.writeInt(share_type);
+        parcel.writeString(share_url);
+        parcel.writeByte((byte) (show_dislike ? 1 : 0));
+        parcel.writeByte((byte) (show_portrait ? 1 : 0));
+        parcel.writeByte((byte) (show_portrait_article ? 1 : 0));
+        parcel.writeString(source);
+        parcel.writeInt(source_icon_style);
+        parcel.writeString(source_open_url);
+        parcel.writeString(tag);
+        parcel.writeLong(tag_id);
+        parcel.writeInt(tip);
+        parcel.writeString(title);
+        parcel.writeString(url);
+        parcel.writeInt(user_repin);
+        parcel.writeInt(user_verified);
+        parcel.writeString(verified_content);
+        parcel.writeInt(video_duration);
+        parcel.writeString(video_id);
+        parcel.writeInt(video_style);
     }
-
 
     public static class ForwardInfoBean {
         /**
@@ -851,14 +837,14 @@ public class MultiNewsArticleDataBean implements Parcelable{
 
     public static class MediaInfoBean {
         /**
-         * avatar_url : http://p2.pstatp.com/large/8602/5710290530
+         * avatar_url : http://p2.pstatp.com/large/9705/940341672
          * follow : false
          * is_star_user : false
-         * media_id : 5501832587
-         * name : 潮男指南
+         * media_id : 5772179103
+         * name : 雪茄123
          * recommend_reason :
          * recommend_type : 0
-         * user_id : 5501832587
+         * user_id : 5772179103
          * user_verified : false
          * verified_content :
          */
@@ -957,11 +943,11 @@ public class MultiNewsArticleDataBean implements Parcelable{
 
     public static class MiddleImageBean {
         /**
-         * height : 450
-         * uri : list/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e
-         * url : http://p1.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp
-         * url_list : [{"url":"http://p1.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"},{"url":"http://pb3.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"},{"url":"http://pb9.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"}]
-         * width : 800
+         * height : 356
+         * uri : list/pgc-image/1525761536025dfbac711d1
+         * url : http://p9.pstatp.com/list/300x196/pgc-image/1525761536025dfbac711d1.webp
+         * url_list : [{"url":"http://p9.pstatp.com/list/300x196/pgc-image/1525761536025dfbac711d1.webp"},{"url":"http://pb1.pstatp.com/list/300x196/pgc-image/1525761536025dfbac711d1.webp"},{"url":"http://pb3.pstatp.com/list/300x196/pgc-image/1525761536025dfbac711d1.webp"}]
+         * width : 640
          */
 
         private int height;
@@ -1012,7 +998,7 @@ public class MultiNewsArticleDataBean implements Parcelable{
 
         public static class UrlListBean {
             /**
-             * url : http://p1.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp
+             * url : http://p9.pstatp.com/list/300x196/pgc-image/1525761536025dfbac711d1.webp
              */
 
             private String url;
@@ -1032,8 +1018,8 @@ public class MultiNewsArticleDataBean implements Parcelable{
          * cover_image : null
          * description : null
          * share_type : {"pyq":2,"qq":0,"qzone":0,"wx":0}
-         * share_url : http://m.toutiao.com/group/6553127623394853384/?iid=5034850950&app=news_article
-         * title : 偷偷跟您讲，比运动裤还舒适的亚麻裤“顺势而出”，70男贼中意
+         * share_url : http://m.toutiao.com/a6553095961164382733/?iid=5034850950&app=news_article
+         * title : 如何开启一个新的雪茄保湿盒？
          */
 
         private Object cover_image;
@@ -1157,12 +1143,12 @@ public class MultiNewsArticleDataBean implements Parcelable{
 
     public static class UserInfoBean {
         /**
-         * avatar_url : http://p3.pstatp.com/thumb/8602/5710290530
-         * description : 每日优质商品推荐，每日新鲜资讯分享。
+         * avatar_url : http://p3.pstatp.com/thumb/9705/940341672
+         * description : 雪茄123媒体资讯专业网站创建于2012年6月，提供雪茄文化，知识信息资讯。
          * follow : false
          * follower_count : 0
-         * name : 潮男指南
-         * user_id : 5501832587
+         * name : 雪茄123
+         * user_id : 5772179103
          * user_verified : false
          */
 
@@ -1228,6 +1214,174 @@ public class MultiNewsArticleDataBean implements Parcelable{
 
         public void setUser_verified(boolean user_verified) {
             this.user_verified = user_verified;
+        }
+    }
+
+    public static class VideoDetailInfoBean {
+        /**
+         * detail_video_large_image : {"height":326,"uri":"video1609/pgc-image/1525761536025dfbac711d1","url":"http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1","url_list":[{"url":"http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"},{"url":"http://pb1.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"},{"url":"http://pb3.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"}],"width":580}
+         * direct_play : 1
+         * group_flags : 32832
+         * show_pgc_subscribe : 1
+         * video_id : v02004660000bbokblpcgf31ghjh4jlg
+         * video_preloading_flag : 1
+         * video_type : 0
+         * video_watch_count : 46
+         * video_watching_count : 0
+         */
+
+        private DetailVideoLargeImageBean detail_video_large_image;
+        private int direct_play;
+        private int group_flags;
+        private int show_pgc_subscribe;
+        private String video_id;
+        private int video_preloading_flag;
+        private int video_type;
+        private int video_watch_count;
+        private int video_watching_count;
+
+        public DetailVideoLargeImageBean getDetail_video_large_image() {
+            return detail_video_large_image;
+        }
+
+        public void setDetail_video_large_image(DetailVideoLargeImageBean detail_video_large_image) {
+            this.detail_video_large_image = detail_video_large_image;
+        }
+
+        public int getDirect_play() {
+            return direct_play;
+        }
+
+        public void setDirect_play(int direct_play) {
+            this.direct_play = direct_play;
+        }
+
+        public int getGroup_flags() {
+            return group_flags;
+        }
+
+        public void setGroup_flags(int group_flags) {
+            this.group_flags = group_flags;
+        }
+
+        public int getShow_pgc_subscribe() {
+            return show_pgc_subscribe;
+        }
+
+        public void setShow_pgc_subscribe(int show_pgc_subscribe) {
+            this.show_pgc_subscribe = show_pgc_subscribe;
+        }
+
+        public String getVideo_id() {
+            return video_id;
+        }
+
+        public void setVideo_id(String video_id) {
+            this.video_id = video_id;
+        }
+
+        public int getVideo_preloading_flag() {
+            return video_preloading_flag;
+        }
+
+        public void setVideo_preloading_flag(int video_preloading_flag) {
+            this.video_preloading_flag = video_preloading_flag;
+        }
+
+        public int getVideo_type() {
+            return video_type;
+        }
+
+        public void setVideo_type(int video_type) {
+            this.video_type = video_type;
+        }
+
+        public int getVideo_watch_count() {
+            return video_watch_count;
+        }
+
+        public void setVideo_watch_count(int video_watch_count) {
+            this.video_watch_count = video_watch_count;
+        }
+
+        public int getVideo_watching_count() {
+            return video_watching_count;
+        }
+
+        public void setVideo_watching_count(int video_watching_count) {
+            this.video_watching_count = video_watching_count;
+        }
+
+        public static class DetailVideoLargeImageBean {
+            /**
+             * height : 326
+             * uri : video1609/pgc-image/1525761536025dfbac711d1
+             * url : http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1
+             * url_list : [{"url":"http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"},{"url":"http://pb1.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"},{"url":"http://pb3.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"}]
+             * width : 580
+             */
+
+            private int height;
+            private String uri;
+            private String url;
+            private int width;
+            private List<UrlListBeanX> url_list;
+
+            public int getHeight() {
+                return height;
+            }
+
+            public void setHeight(int height) {
+                this.height = height;
+            }
+
+            public String getUri() {
+                return uri;
+            }
+
+            public void setUri(String uri) {
+                this.uri = uri;
+            }
+
+            public String getUrl() {
+                return url;
+            }
+
+            public void setUrl(String url) {
+                this.url = url;
+            }
+
+            public int getWidth() {
+                return width;
+            }
+
+            public void setWidth(int width) {
+                this.width = width;
+            }
+
+            public List<UrlListBeanX> getUrl_list() {
+                return url_list;
+            }
+
+            public void setUrl_list(List<UrlListBeanX> url_list) {
+                this.url_list = url_list;
+            }
+
+            public static class UrlListBeanX {
+                /**
+                 * url : http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1
+                 */
+
+                private String url;
+
+                public String getUrl() {
+                    return url;
+                }
+
+                public void setUrl(String url) {
+                    this.url = url;
+                }
+            }
         }
     }
 
@@ -1306,20 +1460,20 @@ public class MultiNewsArticleDataBean implements Parcelable{
         }
     }
 
-    public static class ImageListBean {
+    public static class LargeImageListBean {
         /**
-         * height : 450
-         * uri : list/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e
-         * url : http://p1.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp
-         * url_list : [{"url":"http://p1.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"},{"url":"http://pb3.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"},{"url":"http://pb9.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp"}]
-         * width : 800
+         * height : 326
+         * uri : video1609/pgc-image/1525761536025dfbac711d1
+         * url : http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1
+         * url_list : [{"url":"http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"},{"url":"http://pb1.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"},{"url":"http://pb3.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1"}]
+         * width : 580
          */
 
         private int height;
         private String uri;
         private String url;
         private int width;
-        private List<UrlListBeanX> url_list;
+        private List<UrlListBeanXX> url_list;
 
         public int getHeight() {
             return height;
@@ -1353,17 +1507,17 @@ public class MultiNewsArticleDataBean implements Parcelable{
             this.width = width;
         }
 
-        public List<UrlListBeanX> getUrl_list() {
+        public List<UrlListBeanXX> getUrl_list() {
             return url_list;
         }
 
-        public void setUrl_list(List<UrlListBeanX> url_list) {
+        public void setUrl_list(List<UrlListBeanXX> url_list) {
             this.url_list = url_list;
         }
 
-        public static class UrlListBeanX {
+        public static class UrlListBeanXX {
             /**
-             * url : http://p1.pstatp.com/list/300x196/temai/6559be1287b8f0126dda413d983a4e0e6fe2c08e.webp
+             * url : http://p9.pstatp.com/video1609/pgc-image/1525761536025dfbac711d1
              */
 
             private String url;

@@ -15,15 +15,15 @@ public abstract class LazyLoadFragment<T extends IBasePresenter> extends BaseFra
     /**
      * 是否加载过数据
      */
-    private boolean mIsDataInitiated;
+    protected boolean mIsDataInitiated;
     /**
      * 是否初始化过布局
      */
-    private boolean mIsViewInflate;
+    protected boolean mIsViewInflate;
     /**
      * 是否对用户可见
      */
-    private boolean mIsVisibleToUser;
+    protected boolean mIsVisibleToUser;
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
@@ -41,6 +41,7 @@ public abstract class LazyLoadFragment<T extends IBasePresenter> extends BaseFra
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mIsViewInflate = true;
+        prepareFetchData();
     }
 
     private void prepareFetchData() {

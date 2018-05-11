@@ -17,6 +17,7 @@ import com.sx.breakingnews.module.media.MediaTabLayout;
 import com.sx.breakingnews.module.news.NewsTabLayout;
 import com.sx.breakingnews.module.photo.PhotoTabLayout;
 import com.sx.breakingnews.module.video.VideoTabLayout;
+import com.sx.breakingnews.widget.helper.BottomNavigationViewHelper;
 
 
 /**
@@ -52,6 +53,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     private void initView() {
         toolbar = findViewById(R.id.toolbar);
         bottomNavigationView = findViewById(R.id.navitation_bottom);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         toolbar.inflateMenu(R.menu.menu_activity_main);
         toolbar.setTitle(R.string.title_news);
         setSupportActionBar(toolbar);
@@ -64,7 +66,6 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
 
         //设置navigationview
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {

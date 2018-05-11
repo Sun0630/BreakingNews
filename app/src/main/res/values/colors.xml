@@ -25,4 +25,6 @@
     <color name="Grey700">#616161</color>
     <color name="Grey800">#424242</color>
     <color name="Grey900">#212121</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Blue_Grey">#607d8b</color>
 </resources>
