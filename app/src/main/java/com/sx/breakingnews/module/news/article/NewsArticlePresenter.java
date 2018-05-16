@@ -124,7 +124,7 @@ public class NewsArticlePresenter implements INewsArticle.Presenter {
                     return list;
                 })
                 .observeOn(AndroidSchedulers.mainThread())
-//                .as(view.bindAutoDispose())
+                .as(mView.bindAutoDispose())
                 .subscribe(list -> {
                     Log.e(TAG, "subscribe " + list.size());
                     if (null != list && list.size() > 0) {

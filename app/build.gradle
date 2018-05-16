@@ -73,4 +73,10 @@ dependencies {
 
     // RxBinding
     implementation 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.1.1'
+
+
+    // AutoDispose
+    implementation 'com.uber.autodispose:autodispose:0.7.0'
+    implementation 'com.uber.autodispose:autodispose-android:0.7.0'
+    implementation 'com.uber.autodispose:autodispose-android-archcomponents:0.7.0'
 }

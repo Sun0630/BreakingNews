@@ -1,5 +1,7 @@
 package com.sx.breakingnews.module.base;
 
+import com.uber.autodispose.AutoDisposeConverter;
+
 /**
  * @Author Administrator
  * @Date 2018/4/13 0013 下午 2:19
@@ -28,5 +30,13 @@ public interface IBaseView<T> {
      * @param presenter
      */
     void setPresenter(T presenter);
+
+
+    /**
+     * 绑定生命周期
+     * @param <X>
+     * @return
+     */
+    <X> AutoDisposeConverter<X> bindAutoDispose();
 
 }

@@ -34,7 +34,7 @@ public class Register {
                         return NewsArticleVideoViewBinder.class;
                     }
 
-                    if (null != dataBean.getLarge_image_list() && dataBean.getLarge_image_list().size() > 0) {
+                    if (null != dataBean.getImage_list() && dataBean.getImage_list().size() > 0) {
                         return NewsArticleImgViewBinder.class;
                     }
 

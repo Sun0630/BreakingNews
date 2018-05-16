@@ -11,13 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jakewharton.rxbinding2.view.RxView;
 import com.sx.breakingnews.ErrorAction;
 import com.sx.breakingnews.IntentAction;
 import com.sx.breakingnews.R;
 import com.sx.breakingnews.bean.news.MultiNewsArticleDataBean;
+import com.sx.breakingnews.module.news.content.NewsContentActivity;
 import com.sx.breakingnews.utils.ImageLoader;
 import com.sx.breakingnews.utils.SettingUtils;
 import com.sx.breakingnews.utils.TimeUtil;
@@ -48,7 +48,7 @@ public class NewsArticleImgViewBinder extends ItemViewBinder<MultiNewsArticleDat
 
         try {
             String imgUrl = "http://p3.pstatp.com/";
-            List<MultiNewsArticleDataBean.LargeImageListBean> image_list = item.getLarge_image_list();
+            List<MultiNewsArticleDataBean.ImageListBean> image_list = item.getImage_list();
             if (image_list != null && image_list.size() > 0) {
                 String url = image_list.get(0).getUrl();
                 ImageLoader.loadCenterCrop(context,url,holder.iv_image,R.color.White);
@@ -99,7 +99,7 @@ public class NewsArticleImgViewBinder extends ItemViewBinder<MultiNewsArticleDat
             RxView.clicks(holder.itemView)
                     .throttleFirst(1, TimeUnit.SECONDS)
                     .subscribe(o -> {
-                        Toast.makeText(context, "点击了文章", Toast.LENGTH_SHORT).show();
+                        NewsContentActivity.launch(item,finalImgUrl);
                     });
 
 

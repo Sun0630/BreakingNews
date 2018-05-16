@@ -11,13 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jakewharton.rxbinding2.view.RxView;
 import com.sx.breakingnews.ErrorAction;
 import com.sx.breakingnews.IntentAction;
 import com.sx.breakingnews.R;
 import com.sx.breakingnews.bean.news.MultiNewsArticleDataBean;
+import com.sx.breakingnews.module.news.content.NewsContentActivity;
 import com.sx.breakingnews.utils.ImageLoader;
 import com.sx.breakingnews.utils.TimeUtil;
 import com.sx.breakingnews.widget.CircleImageView;
@@ -85,7 +85,7 @@ public class NewsArticleTextViewBinder extends ItemViewBinder<MultiNewsArticleDa
                     .clicks(holder.itemView)
                     .throttleFirst(1, TimeUnit.SECONDS)
                     .subscribe(o -> {
-                        Toast.makeText(context, "点击进入文章详情", Toast.LENGTH_SHORT).show();
+                        NewsContentActivity.launch(item);
                     });
 
         } catch (Exception e) {

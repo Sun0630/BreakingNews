@@ -1,11 +1,17 @@
 package com.sx.breakingnews.module.base;
 
+import android.arch.lifecycle.Lifecycle;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.uber.autodispose.AutoDispose;
+import com.uber.autodispose.AutoDisposeConverter;
+import com.uber.autodispose.android.lifecycle.AndroidLifecycleScopeProvider;
 
 /**
  * @Author Administrator
@@ -32,6 +38,12 @@ public abstract class BaseFragment<T extends IBasePresenter> extends Fragment im
         setPresenter(presenter);
     }
 
+
+    public void initToolBar(Toolbar toolbar, boolean homeAsUpEnable, String title){
+        ((BaseActivity)getActivity()).initToolBar(toolbar,homeAsUpEnable,title);
+    }
+
+
     /**
      * 绑定视图ID
      *
@@ -54,5 +66,13 @@ public abstract class BaseFragment<T extends IBasePresenter> extends Fragment im
     protected abstract void initData();
 
 
+    /**
+     * 绑定生命周期
+     */
+    @Override
+    public <X> AutoDisposeConverter<X> bindAutoDispose() {
+        return AutoDispose.autoDisposable(AndroidLifecycleScopeProvider
+                .from(this, Lifecycle.Event.ON_DESTROY));
+    }
 
 }
