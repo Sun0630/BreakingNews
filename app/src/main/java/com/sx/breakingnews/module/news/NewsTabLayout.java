@@ -14,7 +14,7 @@ import android.widget.LinearLayout;
 
 import com.sx.breakingnews.Constant;
 import com.sx.breakingnews.R;
-import com.sx.breakingnews.adapter.BasePagerAdapter;
+import com.sx.breakingnews.adapter.base.BasePagerAdapter;
 import com.sx.breakingnews.bean.news.NewsChannelBean;
 import com.sx.breakingnews.database.dao.NewsChannelDao;
 import com.sx.breakingnews.module.news.article.NewsArticleView;
@@ -80,6 +80,8 @@ public class NewsTabLayout extends Fragment {
         mAdapter = new BasePagerAdapter(getChildFragmentManager(), mFragmentList, mTitleList);
         mViewPager.setAdapter(mAdapter);
         mViewPager.setOffscreenPageLimit(15);
+
+
     }
 
     private void initTabs() {

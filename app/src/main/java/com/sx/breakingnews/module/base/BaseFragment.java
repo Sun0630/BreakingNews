@@ -24,6 +24,7 @@ public abstract class BaseFragment<T extends IBasePresenter> extends Fragment im
     protected T presenter;
 
     @Nullable
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(attachLayoutId(), container, false);

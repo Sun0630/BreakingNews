@@ -11,6 +11,8 @@ import android.support.v4.widget.NestedScrollView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
@@ -90,7 +92,10 @@ public class NewsContentFragment extends BaseFragment<INewsContent.Presenter> im
 
         mSwipeRefreshLayout = view.findViewById(R.id.refresh_layout);
 
-
+        mSwipeRefreshLayout.setOnRefreshListener(() -> {
+            mSwipeRefreshLayout.post(()->mSwipeRefreshLayout.setRefreshing(true));
+            presenter.doLoadData(mDataBean);
+        });
         if (mIsHasImage) {
             //有图片
             mAppBarLayout = view.findViewById(R.id.app_bar_layout);
@@ -98,6 +103,8 @@ public class NewsContentFragment extends BaseFragment<INewsContent.Presenter> im
             mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);
             mImageView = view.findViewById(R.id.iv_image);
         }
+
+        setHasOptionsMenu(true);
 
     }
 
@@ -146,14 +153,14 @@ public class NewsContentFragment extends BaseFragment<INewsContent.Presenter> im
                         window = getActivity().getWindow();
                     }
 
-                    if (state == STATE.EXPANDE){
+                    if (state == STATE.EXPANDE) {
                         //展开状态
                         mCollapsingToolbarLayout.setTitle("");
                         mToolbar.setBackgroundColor(Color.TRANSPARENT);
-                    }else if (state == STATE.COLLAPSED){
+                    } else if (state == STATE.COLLAPSED) {
                         //折叠状态
 
-                    }else {
+                    } else {
                         //中间状态
                         mCollapsingToolbarLayout.setTitle(mMediaName);
 
@@ -161,10 +168,9 @@ public class NewsContentFragment extends BaseFragment<INewsContent.Presenter> im
                     }
 
 
-
                 }
             });
-        }else {
+        } else {
             mToolbar.setTitle(mMediaName);
         }
 
@@ -179,6 +185,7 @@ public class NewsContentFragment extends BaseFragment<INewsContent.Presenter> im
     @Override
     public void onHideLoading() {
         mProgressBar.hide();
+        mSwipeRefreshLayout.post(() -> mSwipeRefreshLayout.setRefreshing(false));
     }
 
     @Override
@@ -205,10 +212,28 @@ public class NewsContentFragment extends BaseFragment<INewsContent.Presenter> im
 
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menu_browser, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case android.R.id.home:
                 getActivity().onBackPressed();
+                break;
+            case R.id.action_open_comment:
+                Snackbar.make(mToolbar, "打开评论", Snackbar.LENGTH_SHORT).show();
+                break;
+            case R.id.action_open_media_name:
+                Snackbar.make(mToolbar, "打开头条号", Snackbar.LENGTH_SHORT).show();
+                break;
+            case R.id.action_share:
+                Snackbar.make(mToolbar, "分享", Snackbar.LENGTH_SHORT).show();
+                break;
+            case R.id.action_open_in_browser:
+                Snackbar.make(mToolbar, "打开浏览器", Snackbar.LENGTH_SHORT).show();
                 break;
         }
         return super.onOptionsItemSelected(item);

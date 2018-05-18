@@ -1,4 +1,4 @@
-package com.sx.breakingnews.adapter;
+package com.sx.breakingnews.adapter.base;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;

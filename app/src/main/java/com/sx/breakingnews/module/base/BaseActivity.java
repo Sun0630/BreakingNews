@@ -16,7 +16,6 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     public void initToolBar(Toolbar toolbar, boolean homeAsUpEnable, String title) {
